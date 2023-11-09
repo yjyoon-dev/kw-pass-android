@@ -1,6 +1,8 @@
 plugins {
+    kotlin("android")
+    kotlin("kapt")
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -56,9 +58,13 @@ dependencies {
     implementation(libs.bundles.compose)
 
     implementation(libs.bundles.retrofit)
-    implementation(libs.bundles.tikxml)
-
     implementation(libs.datastore.preferences)
+
+    implementation(libs.bundles.tikxml)
+    kapt(libs.tickaroo.tikxml.processor)
+
+    implementation(libs.google.hilt.android)
+    kapt(libs.google.hilt.compiler)
 
     implementation(libs.coil.compose)
     implementation(libs.zxing.android.embedded)
