@@ -1,4 +1,4 @@
-package dev.yjyoon.kwpass
+package dev.yjyoon.kwpass.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
