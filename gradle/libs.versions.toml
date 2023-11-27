@@ -80,6 +80,7 @@ compose = [
     "compose-ui",
     "compose-ui-tooling-preview",
     "compose-material-iconscore",
+    "compose-material-iconsext",
     "compose-material3",
     "compose-material3-window",
 ]
