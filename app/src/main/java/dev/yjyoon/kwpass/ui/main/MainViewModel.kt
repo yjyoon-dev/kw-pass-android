@@ -33,7 +33,10 @@ class MainViewModel @Inject constructor(
         _uiState.value = MainUiState.Loading
         viewModelScope.launch {
             remoteRepository.getQrCode(user)
-                .onSuccess { _uiState.value = MainUiState.SignedIn(it) }
+                .onSuccess {
+                    if (user.autoSignedIn.not()) localRepository.setUserData(user)
+                    _uiState.value = MainUiState.SignedIn(it)
+                }
                 .onFailure { _uiState.value = MainUiState.NeedToSignIn }
         }
     }
